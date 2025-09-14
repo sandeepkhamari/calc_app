@@ -118,30 +118,3 @@ include(CTest)
 
 
 # --- End of Googletest configuration ---
-
-# --- Code Coverage Configuration ---
-# Find the lcov executable
-find_program(LCOV lcov)
-
-# Add a build option to control coverage
-option(ENABLE_COVERAGE "Enable code coverage reports" OFF)
-
-message(STATUS "ENABLE_COVERAGE: ${ENABLE_COVERAGE}")
-message(STATUS "LCOV: ${LCOV}")
-
-if (ENABLE_COVERAGE AND LCOV)
-    # Add the necessary compiler flags
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fprofile-arcs -ftest-coverage")
-    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} --coverage")
-
-    # Add a custom target to generate the report
-    add_custom_target(coverage
-        COMMAND ${LCOV} --capture --directory ${CMAKE_BINARY_DIR} --output-file coverage.info
-        COMMAND ${LCOV} --remove coverage.info '*/3rdparty/*' --output-file coverage.info
-        COMMAND genhtml coverage.info --output-directory ${CMAKE_BINARY_DIR}/html_coverage
-        DEPENDS all
-    )
-endif()
-
-# --- End of Code Coverage Configuration ---
