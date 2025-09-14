@@ -1,0 +1,36 @@
+// README file.
+// This file provides an overview of the project structure and instructions for building and running the project.
+// C++ Calculator Project
+// This project implements a simple calculator with basic arithmetic operations and additional functionalities.
+// Project Structure:
+// - addition/: Contains the Addition class for performing addition operations.
+// - subtraction/: Contains the Subtraction class for performing subtraction operations.
+// - multiplication/: Contains the Multiplication class for performing multiplication operations.
+// - division/: Contains the Division class for performing division operations.
+// - circle/: Contains the Circle class for calculating the area of a circle.
+// - power/: Contains the Power class for exponentiation.
+// - square/: Contains the Square class for calculating the area of a square.
+// - sum/: Contains the Sum class for calculating the summation of integers.
+// - test/: Contains unit tests for the Addition and Subtraction classes using Google Test framework.
+// - main.cpp: The main application file that demonstrates the usage of the calculator functionalities.
+// - CMakeLists.txt: The CMake build configuration file.
+// - scripts/: Contains shell scripts for building, installing, and running the project.
+// Building and Running the Project:
+// 1. Ensure you have CMake and a C++ compiler installed on your system.
+// 2. Clone the repository to your local machine.
+// 3. Navigate to the project directory and create a build directory:
+//    mkdir build
+//    cd build
+// 4. Run CMake to configure the project:
+//    cmake ..
+// 5. Build the project using CMake:
+//    cmake --build .
+// 6. To install the built files, run:
+//    cmake --install . --config debug
+// 7. To run the calculator application, navigate to the install/bin directory and execute:
+//    ./calc_app.exe
+// 8. To run the unit tests, use CTest from the build directory:
+//    ctest --output-on-failure -C debug
+// Note: The project uses the C++17 language standard version.
+// For any issues or contributions, please refer to the project's GitHub repository.
+// End of README file.
