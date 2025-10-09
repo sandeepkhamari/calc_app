@@ -34,7 +34,11 @@ pipeline {
                 echo 'Testing...'
               bat '''
                 call "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat"
-                ctest --verbose --output-on-failure>> test.log
+                dir
+                ctest -N
+                cd test
+                dir
+                test_all.exe --gtest_list_tests
               '''
             }
         }
