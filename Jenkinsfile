@@ -25,13 +25,15 @@ pipeline {
             bat '''
                 call "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat"
                 cd build
-                ls -l
+                dir
             '''
            }
         }
         stage('Test') {
             steps {
                 echo 'Testing...'
+                call "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat"
+                ctest >> test.log
             }
         }
     }
