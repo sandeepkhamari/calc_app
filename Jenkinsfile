@@ -35,6 +35,7 @@ pipeline {
               bat '''
                 call "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat"
                 dir
+                cd build
                 ctest -N
                 cd test
                 dir
