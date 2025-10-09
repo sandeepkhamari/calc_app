@@ -34,6 +34,7 @@ pipeline {
                 echo 'Testing...'
               bat '''
                 call "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat"
+                cd test
                 ctest >> test.log
               '''
             }
