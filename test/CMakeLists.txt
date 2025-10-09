@@ -57,5 +57,8 @@ set_target_properties(test_all PROPERTIES
 
 include(GoogleTest)
 # Automatically discovers and adds all tests to CTest
-gtest_discover_tests(test_all)
+gtest_discover_tests(
+   test_all
+   DISCOVERY_TIMEOUT 30  # or more
+)
 
